@@ -27,8 +27,8 @@ void print_alphabet(void)
 
 	while (b <= c)
 	{
-		_putchar(b);
+		putchar(b);
 		b++;
 	}
-	_putchar('\n');
+	putchar('\n');
 }
