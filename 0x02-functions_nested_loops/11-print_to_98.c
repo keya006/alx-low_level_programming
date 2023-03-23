@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_to_98 - prints to 98
+ * print_to_98 - prints to n98
  * @n: number input
  *
- * return: 0
+ * return: zero
  */
 void print_to_98(int n)
 {
@@ -12,19 +12,19 @@ void print_to_98(int n)
 	{
 		while (n <= 98)
 		{
-			printf(n);
+			printf('%d', n);
 			n++;
 		}
 	}
 	else if (n == 98)
 	{
-		printf(n);
+		printf('%d', n);
 	}
 	else if (n > 98)
 	{
 		while (n >= 98)
 		{
-			printf(n);
+			printf('%d', n);
 			n--;
 		}
 	}
