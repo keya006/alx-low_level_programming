@@ -2,7 +2,7 @@
 
 /**
  * reset_to_98 - reset value of n
- * @*n: adress of parameter
+ * @n: adress of parameter
  *
  * Return: void
  */
