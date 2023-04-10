@@ -2,7 +2,6 @@
 
 /**
  * is_palindrome - checks if
- * rev - reverses a string
  * @s: the string
  *
  * Return: returns 1 if true and 0 otherwise
