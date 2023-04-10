@@ -4,7 +4,7 @@
  * _strlen - len of string
  * @s: gfd
  *
- * Return int
+ * Return: int
  */
 
 int _strlen(char *s)

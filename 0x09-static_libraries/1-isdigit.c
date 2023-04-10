@@ -2,7 +2,7 @@
 
 /**
  * _isdigit - nh
- * @n: jhg
+ * @c: jhg
  *
  * Return: int
  */
