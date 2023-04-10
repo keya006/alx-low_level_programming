@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 /**
  * main - Entry point of program
@@ -12,6 +11,13 @@
 
 int main(int argc, char *argv[])
 {
-	printf("%d\n", (argc - 1));
+	int i;
+	int sum = 0;
+
+	for (i = 1; i < argc; i++)
+	{
+		sum += 1;
+	}
+	printf("%d\n", sum);
 	return (0);
 }
