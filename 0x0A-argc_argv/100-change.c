@@ -14,6 +14,10 @@ int main(int argc, char *argv[])
 	int i;
 	int b;
 	int a;
+	int c;
+	int d;
+	int e;
+	int f;
 
 	if (argc != 2)
 	{
@@ -31,10 +35,14 @@ int main(int argc, char *argv[])
 			else
 			{
 				b = atoi(argv[i]);
-				a = (b / 25) + ((b % 25) / 10) + (((b % 25) % 10) / 5) + ((((b % 25) % 10) % 5) / 2) + (((((b % 25) % 10) % 5) % 2) / 1);
-			printf("%d\n", a);
+				c = b % 25;
+				d = c % 10;
+				e = d % 5;
+				f = e % 2;
+				a = (b / 25) + (c / 10) + (d / 5) + (e / 2) + (f / 1);
+				printf("%d\n", a);
 			}
 		}
 	}
-return (0);
+	return (0);
 }
