@@ -34,3 +34,4 @@ char *_strdup(char *str)
 		was[t] = str[t];
 	}
 	return (was);
+}
