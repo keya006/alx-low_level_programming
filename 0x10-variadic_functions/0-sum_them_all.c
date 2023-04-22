@@ -29,5 +29,4 @@ int sum_them_all(const unsigned int n, ...)
 		var_end(ptr);
 		return (sum);
 	}
-	return (0);
 }
