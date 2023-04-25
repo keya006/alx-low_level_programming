@@ -1,16 +1,13 @@
 #include "variadic_functions.h"
-
 /**
  * print_all - a function that prints anything
  * @format: types of arguments
  *
  * Return: void
  */
-
 void print_all(const char * const format, ...)
 {
 	va_list ptr;
-
 	unsigned int i = 0, j, k = 0;
 	char *str;
 	const char r_arg[] = "cifs";
@@ -25,7 +22,7 @@ void print_all(const char * const format, ...)
 			{
 				printf(", ");
 				break;
-			}j++;
+			} j++;
 		}
 		switch (format[i])
 		{
@@ -47,8 +44,7 @@ void print_all(const char * const format, ...)
 				}
 				printf("%s", str);
 				break;
-		}i++;
+		} i++;
 	}
-	printf("\n");
-	va_end(ptr);
+	printf("\n"), va_end(ptr);
 }
