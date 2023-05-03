@@ -1,26 +1,51 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * freed_listp -it frees a linked list
- * @head: the head of a linked list.
+ * loop_listint_len - a function thatCounts the number of unique nodes
+ * in a looped listint_t
+ * @head: A pointer to the head of the listint_t
  *
- * Return: void
+ * Return: 0 if list is not looped otherwise numb of nodes
  */
-void freed_listp(listp_t **head)
+size_t loop_listint_len(const listint_t *head)
 {
-	listp_t *t;
-	listp_t *c;
+	const listint_t *toto, *hate;
+	size_t nods = 1;
 
-	if (!head)
+	if (head == NULL || head->next == NULL)
+		return (0);
+
+	toto = head->next;
+	hate = (head->next)->next;
+
+	while (hate)
 	{
-		c = *head;
-		while ((t = c) != NULL)
+		if (toto == hate)
 		{
-			c = c->next;
-			free(t);
+			toto = head;
+			while (toto != hate)
+			{
+				nods++;
+				toto = toto->next;
+				hate = hate->next;
+			}
+
+			toto = toto->next;
+			while (toto != hate)
+			{
+				nods++;
+				toto = toto->next;
+			}
+
+			return (nods);
 		}
-		*head = NULL;
+
+		toto = toto->next;
+		hate = (hate->next)->next;
 	}
+
+	return (0);
 }
 
 /**
@@ -31,39 +56,29 @@ void freed_listp(listp_t **head)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t nods = 0;
-	listp_t *hp, *n, *d;
+	size_t nods, idx = 0;
 
-	hp = NULL;
-	while (head != NULL)
+	nods = loop_listint_len(head);
+
+	if (nods == 0)
 	{
-		n = malloc(sizeof(listp_t));
-
-		if (n == NULL)
-			exit(98);
-
-		n->p = (void *)head;
-		n->next = hp;
-		hp = n;
-
-		d = hp;
-
-		while (d->next != NULL)
+		for (; head != NULL; nods++)
 		{
-			d = d->next;
-			if (head == d->p)
-			{
-				printf("-> [%p] %d\n", (void *)head, head->n);
-				freed_listp(&hp);
-				return (nods);
-			}
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
 		}
-
-		printf("[%p] %d\n", (void *)head, head->n);
-		head = head->next;
-		nods++;
 	}
 
-	freed_listp(&hp);
+	else
+	{
+		for (idx = 0; idx < nods; idx++)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+
+		printf("-> [%p] %d\n", (void *)head, head->n);
+	}
+
 	return (nods);
 }
