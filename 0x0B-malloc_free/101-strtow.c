@@ -3,7 +3,7 @@
 
 /**
  * count_words - count the number of words in a string
- * @s: string to evaluate
+ * @t: string to evaluate
  *
  * Return: number of words
  */
