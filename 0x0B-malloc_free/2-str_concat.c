@@ -28,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 
 	if (strit == NULL)
 	{
-		free(strout);
+		free(strit);
 		return (NULL);
 	}
 
